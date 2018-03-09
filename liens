@@ -1,2 +1,5 @@
 PREMIER TP
 	http://homepages.laas.fr/ealata/Projet_Syst_Info_2018.pdf
+
+
+/*({D}|{F})([ ]*[-+*/=][ ]*({D}|{F}))+ printf("read %s\n", yytext );*/
