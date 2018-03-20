@@ -25,6 +25,10 @@
 %token tFOR;
 %token tLESS;
 %token tMORE;
+
+%left tPLUS tMOINS
+%left tMULT tDIV
+
 %%
 
 Fonctions:
@@ -53,16 +57,12 @@ Intrs:
 	| ;
 
 Intr: 
-	Decls 
+	Decl 
 	| Print 
 	| Calcul tPOINTVIRGULE
 	| If
 	| While
 	| For;
-
-Decls:
-	Decl Decls 
-	| ;
 
 Decl: 
 	tINT tID Declp;
