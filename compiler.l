@@ -15,15 +15,27 @@ ID	[a-zA-Z][_a-zA-Z0-9]*
 "," return tVIRGULE;
 [\n\t ]	{}
 ";" return tPOINTVIRGULE;
-{D}+{E}? return tINTEGER;
-const return tCONST;
-int	return tINT;
+{D}+{E}? {
+		yylval.nb = atoi(yytext);
+		return tINTEGER;
+	}
+const {
+		yylval.str = strdup(yytext);
+		return tCONST;
+	}
+int	{
+		yylval.str = strdup(yytext);
+		return tINT;
+	}
 "if" return tIF;
 "else"	return tELSE;
 "while" return tWHILE;
 "for" return tFOR;
 "printf" return tPRINT;
-{ID} return tID;
+{ID} {
+		yylval.str = strdup(yytext);
+		return tID;
+	}
 "(" return tPARENTHESEouv;
 ")" return tPARENTHESEferm;
 "{" return tACOLADEouv;

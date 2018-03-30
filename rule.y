@@ -1,8 +1,15 @@
 %{
-	#include<stdio.h>
+	#include <stdio.h>
+	#include "tablesymboles.h"
 	int yylex(void);
 	void yyerror(char*);
 %}
+
+%union{
+	int nb;
+	char* str;
+}
+
 %token tINT
 %token tPLUS
 %token tMOINS
@@ -28,6 +35,9 @@
 
 %left tPLUS tMOINS
 %left tMULT tDIV
+
+%type <str> tINT tID tCONST
+%type <nb>  tINTEGER
 
 %%
 
@@ -65,10 +75,10 @@ Intr:
 	| For;
 
 Decl: 
-	tINT tID Declp;
+	tINT tID { add_symbol(matrix, $2, "int") } Declp;
 
 Declp: 
-	tVIRGULE tID Declp 
+	tVIRGULE tID { add_symbol(matrix, $2, "int") } Declp 
 	| tPOINTVIRGULE;
 
 Print: 
@@ -84,19 +94,21 @@ Calcul:
 	| tID tMULT tEGAL Expression;
 
 Expression:
-	  Expression tPLUS Expression
+	  Expression tPLUS Expression 
 	| Expression tMOINS Expression
 	| Expression tDIV Expression
 	| Expression tMULT Expression
 	| tID
-	| tINTEGER
+	| tINTEGER {printf("AFC r1, %d\n", $1);
+				printf("STORE %d, r1\n", $1);
+				add_symbole(matrix, "temp", "int")}
 	| tPARENTHESEouv Expression tPARENTHESEferm
 	;
 
 If:
 	tIF tPARENTHESEouv Expression Comparateur Expression tPARENTHESEferm Body Else;
 
-Else: 
+Else:
 	tELSE Body
 	| tELSE If
  	| ;
