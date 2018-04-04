@@ -5,6 +5,7 @@
 
 #define DEPTH 2000
 #define EXIT_SUCCESS 0
+#define EXIT_FAIL -1
 #define CHAR_SIZE 20
 
 typedef struct Symbol{
@@ -13,13 +14,12 @@ typedef struct Symbol{
 	int value;
 } Symbol;
 
-int current;
-Symbol* matrix;
-
 Symbol* fill_matrix();
-void delete_matrix(Symbol* matrix);
-int find_symbol(Symbol* matrix, char name[CHAR_SIZE]);
-int add_symbol(Symbol* matrix, char type[CHAR_SIZE], char name[CHAR_SIZE]);
-int delete_symbol(Symbol* matrix, char name[CHAR_SIZE] );
-void print_matrix(Symbol* matrix);
-void main();
+int get_last_address();
+void delete_matrix();
+int find_symbol(char name[CHAR_SIZE]);
+int set_value(char name[CHAR_SIZE], int value);
+int get_value(char name[CHAR_SIZE]);
+int add_symbol(char type[CHAR_SIZE], char name[CHAR_SIZE]);
+int delete_symbol(int index);
+void print_matrix();

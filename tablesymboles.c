@@ -1,5 +1,8 @@
 #include "tablesymboles.h"
 
+int current;
+Symbol* matrix;
+
 /**
 * @brief function that initializes the matrix (table)
 * @param void
@@ -18,7 +21,11 @@ Symbol* fill_matrix(){
 	return matrix;
 }
 
-int find_symbol(Symbol* matrix, char name[CHAR_SIZE]){
+int get_last_address(){
+	return(current-1);
+}
+
+int find_symbol(char name[CHAR_SIZE]){
 	
 	int i;
 
@@ -28,29 +35,64 @@ int find_symbol(Symbol* matrix, char name[CHAR_SIZE]){
 		}
 	}
 
-	return(EXIT_FAILURE);
+	return(EXIT_FAIL);
 
 }
 
-int add_symbol(Symbol* matrix, char name[CHAR_SIZE], char type[CHAR_SIZE]){
+int set_value(char name[CHAR_SIZE], int value){
+	
+	int index = find_symbol(name);
+	
+	if(index == EXIT_FAIL){
+		printf("Error: variable does not exist. \n");
+		return(EXIT_FAIL);
+	}
+	
+	matrix[index].value = value;
 
+	return(EXIT_SUCCESS);
+
+}
+
+int get_value(char name[CHAR_SIZE]){
+	int value = 0;
+	
+	int index = find_symbol(name);
+	
+	if(index == EXIT_FAIL){
+		printf("Error: variable does not exist. \n");
+		return(EXIT_FAIL);
+	}
+	
+	value = matrix[index].value;
+
+	return(value);
+
+}
+
+int add_symbol(char name[CHAR_SIZE], char type[CHAR_SIZE]){
+	
 	int i;
 
-	if( find_symbol(matrix, name) != EXIT_FAILURE){
+	if( matrix == NULL ){
+		matrix = fill_matrix();
+	}
+
+	if( find_symbol(name) != EXIT_FAIL){
 		printf("Error: variables with same name. \n");
-		return(EXIT_FAILURE);
+		return(EXIT_FAIL);
 	}
 
 	//create new symbol to add to the matrix
 	Symbol new_symbol;
 	if( strcpy(new_symbol.name,name) ==  NULL){
 		printf("Error: STRCPY failed for name. \n");
-		return(EXIT_FAILURE);
+		return(EXIT_FAIL);
 			
 	}
 	if( strcpy(new_symbol.type, type) ==  NULL){
 		printf("Error: STRCPY failed for type. \n");
-		return(EXIT_FAILURE);
+		return(EXIT_FAIL);
 			
 	}
 	new_symbol.value =  0;
@@ -61,23 +103,22 @@ int add_symbol(Symbol* matrix, char name[CHAR_SIZE], char type[CHAR_SIZE]){
 	return(EXIT_SUCCESS);
 }
 
-int delete_symbol(Symbol* matrix, char name[CHAR_SIZE] ){
+int delete_symbol(int index){
 
-	int index = find_symbol(matrix, name);
-
-	if( index == EXIT_FAILURE){
+	if( index == EXIT_FAIL){
 		printf("Error: variable does not exist. \n");
-		return(EXIT_FAILURE);
+		return(EXIT_FAIL);
 	}
 
-	matrix[index].name = "" ;
-	matrix[index].type = "" ;
+	strcpy(matrix[index].name,"");
+	strcpy(matrix[index].type,"");
 	matrix[index].value = -1;
+	current--;
 
 	return(EXIT_SUCCESS);
 }
 
-void print_matrix(Symbol* matrix){
+void print_matrix(){
 	int i;
 
 	for(i = 0; i < current; i++){
@@ -92,17 +133,6 @@ void delete_matrix( Symbol *matrix){
 	}
 
 	free(matrix);
-}
-
-
-void main(){
-
-	matrix = fill_matrix();
-	add_symbol(matrix, "a", "int", 4);
-	add_symbol(matrix, "a", "int", 5);
-	add_symbol(matrix, "b", "int", 4);
-	print_matrix(matrix);
-
 }
 
 

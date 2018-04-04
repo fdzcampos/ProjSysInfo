@@ -2,9 +2,14 @@ all: compiler
 lex.yy.c: compiler.l
 	./flex compiler.l
 rule.tab.c: rule.y
-	~/bison/bin/bison -d rule.y
-compiler: lex.yy.c rule.tab.c
-	gcc -o compiler lex.yy.c rule.tab.c libfl.a ~/bison/lib/liby.a
+	~/bison/bin/bison -d -v rule.y
+
+%.o: %.c %.h
+	gcc -c $<
+
+compiler: lex.yy.c rule.tab.c tablesymboles.o
+	gcc -o compiler lex.yy.c rule.tab.c tablesymboles.o libfl.a ~/bison/lib/liby.a
+
 clean:
 	rm -rf compiler lex.yy.c rule.tab.c
 test: compiler

@@ -7,7 +7,9 @@ ID	[a-zA-Z][_a-zA-Z0-9]*
 
 %%
 
+"++" return tPLUSPLUS;
 "+" return tPLUS;
+"--" return tMOINSMOINS;
 "-" return tMOINS;
 "*" return tMULT;
 "/" return tDIV;
