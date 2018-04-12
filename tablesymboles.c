@@ -21,8 +21,13 @@ Symbol* fill_matrix(){
 	return matrix;
 }
 
-int get_last_address(){
+int get_last_address(void){
 	return(current-1);
+}
+
+void dec_last_address(void){
+	current--;
+	return;
 }
 
 int find_symbol(char name[CHAR_SIZE]){

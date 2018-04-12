@@ -7,12 +7,15 @@ ID	[a-zA-Z][_a-zA-Z0-9]*
 
 %%
 
+"<=" return tLESSEGAL;
+">=" return tMOREEGAL;
 "++" return tPLUSPLUS;
 "+" return tPLUS;
 "--" return tMOINSMOINS;
 "-" return tMOINS;
 "*" return tMULT;
 "/" return tDIV;
+"==" return tEGALEGAL;
 "=" return tEGAL;
 "," return tVIRGULE;
 [\n\t ]	{}

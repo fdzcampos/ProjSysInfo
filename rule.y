@@ -1,6 +1,7 @@
 %{
 	#include <stdio.h>
 	#include "tablesymboles.h"
+	#include "instr.h"
 	int yylex(void);
 	void yyerror(char*);
 
@@ -23,6 +24,7 @@
 %token tMULT
 %token tDIV
 %token tEGAL
+%token tEGALEGAL
 %token tVIRGULE
 %token tPOINTVIRGULE
 %token tINTEGER
@@ -37,7 +39,9 @@
 %token tELSE
 %token tWHILE
 %token tFOR
+%token tLESSEGAL
 %token tLESS
+%token tMOREEGAL
 %token tMORE
 %token tPLUSPLUS
 %token tMOINSMOINS
@@ -46,7 +50,7 @@
 %left tMULT tDIV
 
 %type <str> tINT tID tCONST
-%type <nb>  tINTEGER
+%type <nb>  tINTEGER tIF tWHILE
 
 %%
 
@@ -97,122 +101,181 @@ Calcul:
 	tID tEGAL Expression {
 			int a = find_symbol($1);
 			int b = get_last_address();
-			printf("LOAD r1, %d\n", b);
-			printf("STORE %d,r1\n", a);
+			add_instruction("LOAD", 1, b);
+			add_instruction("STORE", a, 1);
 			delete_symbol(b);}
 	| tID tPLUSPLUS {
 			int a = find_symbol($1);
-			printf("LOAD r1, %d\n", a);
-			printf("AFC r2, 1\n");
-			printf("ADD r1,r2\n");
-			printf("STORE %d,r1\n", a);}
+			add_instruction("LOAD", 1, a);
+			add_instruction("AFC", 2, 1);
+			add_instruction("ADD", 1, 2);
+			add_instruction("STORE", a, 1);}
 	| tID tMOINSMOINS {
 			int a = find_symbol($1);
-			printf("LOAD r1, %d\n", a);
-			printf("AFC r2, 1\n");
-			printf("SUB r1,r2\n");
-			printf("STORE %d,r1\n", a);}
+			add_instruction("LOAD", 1, a);
+			add_instruction("AFC", 2, 1);
+			add_instruction("SUB", 1, 2);
+			add_instruction("STORE", a, 1);}
 	| tID tPLUS tEGAL Expression {
 			int a = find_symbol($1);
 			int b = get_last_address();
-			printf("LOAD r0, %d\n", a);
-			printf("LOAD r1, %d\n", b);
-			printf("ADD r0,r1\n");
-			printf("STORE %d,r0\n", a);}
+			add_instruction("LOAD", 0, a);
+			add_instruction("LOAD", 1, b);
+			add_instruction("AFC", 0, 1);
+			add_instruction("STORE", a, 0);}
 	| tID tMOINS tEGAL Expression {
 			int a = find_symbol($1);
 			int b = get_last_address();
-			printf("LOAD r0, %d\n", a);
-			printf("LOAD r1, %d\n", b);
-			printf("SUB r0,r1\n");
-			printf("STORE %d,r0\n", a);}
+			add_instruction("LOAD", 0, a);
+			add_instruction("LOAD", 1, b);
+			add_instruction("SUB", 0, 1);
+			add_instruction("STORE", a, 0);}
 	| tID tDIV tEGAL Expression {
 			int a = find_symbol($1);
 			int b = get_last_address();
-			printf("LOAD r0, %d\n", a);
-			printf("LOAD r1, %d\n", b);
-			printf("DIV r0,r1\n");
-			printf("STORE %d,r0\n", a);}
+			add_instruction("LOAD", 0, a);
+			add_instruction("LOAD", 1, b);
+			add_instruction("DIV", 0, 1);
+			add_instruction("STORE", a, 0);}
 	| tID tMULT tEGAL Expression {
 			int a = find_symbol($1);
 			int b = get_last_address();
-			printf("LOAD r0, %d\n", a);
-			printf("LOAD r1, %d\n", b);
-			printf("MUL r0,r1\n");
-			printf("STORE %d,r0\n", a);};
+			add_instruction("LOAD", 0, a);
+			add_instruction("LOAD", 1, b);
+			add_instruction("MUL", 0, 1);
+			add_instruction("STORE", a, 0);};
 
 Expression:
 	  Expression tPLUS Expression {
 				int a = get_last_address();
 				int b = a-1;
-				printf("LOAD r1, %d\n", a);
-				printf("LOAD r2, %d\n", b);
-				printf("ADD r1, r2\n");
-				printf("STORE %d,r1\n", b);
+				add_instruction("LOAD", 1, a);
+				add_instruction("LOAD", 2, b);
+				add_instruction("ADD", 1, 2);
+				add_instruction("STORE", b, 1);
 				delete_symbol(a);
 				}
 	| Expression tMOINS Expression {
 				int a = get_last_address();
 				int b = a-1;
-				printf("LOAD r1, %d\n", a);
-				printf("LOAD r2, %d\n", b);
-				printf("SUB r1, r2\n");
-				printf("STORE %d,r1\n", b);
+				add_instruction("LOAD", 1, a);
+				add_instruction("LOAD", 2, b);
+				add_instruction("SUB", 1, 2);
+				add_instruction("STORE", b, 1);
 				delete_symbol(a);
 				}
 	| Expression tDIV Expression {
 				int a = get_last_address();
 				int b = a-1;
-				printf("LOAD r1, %d\n", a);
-				printf("LOAD r2, %d\n", b);
-				printf("DIV r1, r2\n");
-				printf("STORE %d,r1\n", b);
+				add_instruction("LOAD", 1, a);
+				add_instruction("LOAD", 2, b);
+				add_instruction("DIV", 1, 2);
+				add_instruction("STORE", b, 1);
 				delete_symbol(a);
 				}
 	| Expression tMULT Expression {
 				int a = get_last_address();
 				int b = a-1;
-				printf("LOAD r1, %d\n", a);
-				printf("LOAD r2, %d\n", b);
-				printf("MUL r1, r2\n");
-				printf("STORE %d,r1\n", b);
+				add_instruction("LOAD", 1, a);
+				add_instruction("LOAD", 2, b);
+				add_instruction("MUL", 1, 2);
+				add_instruction("STORE", b, 1);
 				delete_symbol(a);
 				}
 	| tID 		{
 				ADD_TMP();
-				printf("AFC r1, %d\n", get_value($1));
-				printf("STORE %d, r1\n", get_last_address());}
+				add_instruction("AFC", 1, get_value($1));
+				add_instruction("STORE", get_last_address(), 1);}
 	| tINTEGER 	{
 				ADD_TMP();
-				printf("AFC r1, %d\n", $1);
-				printf("STORE %d, r1\n", get_last_address());}
+				add_instruction("AFC", 1, $1);
+				add_instruction("STORE", get_last_address(), 1);}
 	| tPARENTHESEouv Expression tPARENTHESEferm
 	;
 
 If:
-	tIF tPARENTHESEouv Expression Comparateur Expression tPARENTHESEferm Body Else;
+	tIF tPARENTHESEouv Condition tPARENTHESEferm
+	{
+		add_instruction("JMPC", -1, get_last_address());
+		dec_last_address();
+		$1 = get_last_inst();		
+	} Body {
+		patcher($1, get_last_inst());
+	}
+ 	Else; 
 
 Else:
 	tELSE Body
-	| tELSE If
+	| tELSE Ifma
  	| ;
 
 While:
-	tWHILE tPARENTHESEouv Expression Comparateur Expression tPARENTHESEferm Body;
+	tWHILE {
+		$<nb>$ = get_last_inst();
+	}
+	tPARENTHESEouv Condition tPARENTHESEferm 
+	{
+		add_instruction("JMPC", -1, get_last_address());
+		dec_last_address();
+		$1 = get_last_inst();		
+	}
+	 Body {
+		patcher($1, get_last_inst());
+		add_instruction("JMP", $<nb>2, 0);
+	};
 
 For:
-	tFOR tPARENTHESEouv Calcul tPOINTVIRGULE Condition tPOINTVIRGULE Calcul tPARENTHESEferm Body;
+	tFOR tPARENTHESEouv Calcul tPOINTVIRGULE Condition tPOINTVIRGULE Calcul tPARENTHESEferm Body {
+		printf("Not suported yet.");
+	};
+
 
 Condition:
-	Expression Comparateur Expression
-	| ;
-
-Comparateur:
-	tEGAL tEGAL
-	| tLESS tINT tID tCONST
-	| tMORE
-	| tLESS tEGAL
-	| tMORE tEGAL;
+	Expression tEGALEGAL Expression {
+		int a = get_last_address();
+		int b = a-1;
+		add_instruction("LOAD", 1, a);
+		add_instruction("LOAD", 2, b);
+		add_instruction("EQU", 1, 2);
+		add_instruction("STORE", b, 1);
+		delete_symbol(a);
+	}
+	| Expression tLESS Expression {
+		int a = get_last_address();
+		int b = a-1;
+		add_instruction("LOAD", 1, a);
+		add_instruction("LOAD", 2, b);
+		add_instruction("INF", 1, 2);
+		add_instruction("STORE", b, 1);
+		delete_symbol(a);
+	}
+	| Expression tMORE Expression {
+		int a = get_last_address();
+		int b = a-1;
+		add_instruction("LOAD", 1, a);
+		add_instruction("LOAD", 2, b);
+		add_instruction("SUP", 1, 2);
+		add_instruction("STORE", b, 1);
+		delete_symbol(a);
+	}
+	| Expression tLESSEGAL Expression {
+		int a = get_last_address();
+		int b = a-1;
+		add_instruction("LOAD", 1, a);
+		add_instruction("LOAD", 2, b);
+		add_instruction("INFE", 1, 2);
+		add_instruction("STORE", b, 1);
+		delete_symbol(a);
+	}
+	| Expression tMOREEGAL Expression {
+		int a = get_last_address();
+		int b = a-1;
+		add_instruction("LOAD", 1, a);
+		add_instruction("LOAD", 2, b);
+		add_instruction("SUPE", 1, 2);
+		add_instruction("STORE", b, 1);
+		delete_symbol(a);
+	};
 	
 
 %%

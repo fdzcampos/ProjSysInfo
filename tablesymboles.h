@@ -15,7 +15,8 @@ typedef struct Symbol{
 } Symbol;
 
 Symbol* fill_matrix();
-int get_last_address();
+int get_last_address(void);
+void dec_last_address(void);
 void delete_matrix();
 int find_symbol(char name[CHAR_SIZE]);
 int set_value(char name[CHAR_SIZE], int value);

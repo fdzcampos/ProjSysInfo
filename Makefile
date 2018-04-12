@@ -7,8 +7,8 @@ rule.tab.c: rule.y
 %.o: %.c %.h
 	gcc -c $<
 
-compiler: lex.yy.c rule.tab.c tablesymboles.o
-	gcc -o compiler lex.yy.c rule.tab.c tablesymboles.o libfl.a ~/bison/lib/liby.a
+compiler: lex.yy.c rule.tab.c tablesymboles.o instr.o
+	gcc -o compiler lex.yy.c rule.tab.c tablesymboles.o instr.o libfl.a ~/bison/lib/liby.a
 
 clean:
 	rm -rf compiler lex.yy.c rule.tab.c
