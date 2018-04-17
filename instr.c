@@ -29,3 +29,25 @@ void patcher(int last_inst, int new_adress){
 void printInst(Instruction inst_print){
 	printf("Inst %s a %d b %d \n", inst_print.op, inst_print.a, inst_print.b); 
 }
+
+void writeFile(){
+	
+	FILE *fptr;
+	fptr = fopen("./Interpreteur/instructions.s","w");
+
+	if(fptr == NULL){
+	  	printf("Error!");   
+		fclose(fptr);
+	  	return;             
+	}
+
+	for(int i = 0; i < idx_inst; i++){
+		fprintf(fptr,"%s %d %d\n",instr[i].op, instr[i].a, instr[i].b);
+	}
+
+	fclose(fptr);
+
+   	return;
+}
+
+

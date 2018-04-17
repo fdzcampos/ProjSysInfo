@@ -10,6 +10,7 @@ typedef struct Instruction{
 
 void add_instruction(char* op, int a, int b);
 int get_last_inst(void);
-void patcher(int last_inst, int new_adress);
 
-void writeFile();
+void readFile();
+
+void executeInstruction();

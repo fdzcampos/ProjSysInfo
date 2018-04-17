@@ -121,7 +121,7 @@ Calcul:
 			int b = get_last_address();
 			add_instruction("LOAD", 0, a);
 			add_instruction("LOAD", 1, b);
-			add_instruction("AFC", 0, 1);
+			add_instruction("ADD", 0, 1);
 			add_instruction("STORE", a, 0);}
 	| tID tMOINS tEGAL Expression {
 			int a = find_symbol($1);
@@ -196,7 +196,10 @@ Expression:
 If:
 	tIF tPARENTHESEouv Condition tPARENTHESEferm
 	{
-		add_instruction("JMPC", -1, get_last_address());
+		int a = get_last_address();
+		add_instruction("LOAD", 1, a);
+		add_instruction("JMPC", -1, 1);
+		delete_symbol(a);
 		dec_last_address();
 		$1 = get_last_inst();		
 	} Body {
@@ -206,7 +209,7 @@ If:
 
 Else:
 	tELSE Body
-	| tELSE Ifma
+	| tELSE If
  	| ;
 
 While:
@@ -215,8 +218,10 @@ While:
 	}
 	tPARENTHESEouv Condition tPARENTHESEferm 
 	{
-		add_instruction("JMPC", -1, get_last_address());
-		dec_last_address();
+		int a = get_last_address();
+		add_instruction("LOAD", 1, a);
+		add_instruction("JMPC", -1, 1);
+		delete_symbol(a);
 		$1 = get_last_inst();		
 	}
 	 Body {
@@ -281,4 +286,5 @@ Condition:
 %%
 int main(){
 	yyparse();
+	writeFile();
 }
