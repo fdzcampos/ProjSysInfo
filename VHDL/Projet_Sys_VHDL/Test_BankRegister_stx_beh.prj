@@ -1,3 +1,0 @@
-vhdl isim_temp "Register.vhd"
-vhdl isim_temp "RegisterBank.vhd"
-vhdl isim_temp "Test_BankRegister.vhd"
