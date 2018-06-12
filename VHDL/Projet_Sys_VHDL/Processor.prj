@@ -1,0 +1,8 @@
+vhdl work "Register.vhd"
+vhdl work "../ULA.vhd"
+vhdl work "ROM.vhd"
+vhdl work "RegisterBank.vhd"
+vhdl work "Decoder.vhd"
+verilog work "bram16.v"
+vhdl work "../PipeLine.vhdl"
+vhdl work "Processor.vhd"

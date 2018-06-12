@@ -1,0 +1,2 @@
+vhdl work "../ULA.vhd"
+vhdl work "Test_ULA.vhd"

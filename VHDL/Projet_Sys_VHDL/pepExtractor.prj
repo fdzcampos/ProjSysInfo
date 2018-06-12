@@ -1,0 +1,5 @@
+work	"../PipeLine.vhdl"
+work	"Decoder.vhd"
+work	"Processor.vhd"
+work	"Register.vhd"
+work	"RegisterBank.vhd"

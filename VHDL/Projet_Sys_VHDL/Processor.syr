@@ -1,0 +1,334 @@
+Release 13.4 - xst O.87xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> 
+Reading design: Processor.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Processor.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Processor"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : Processor
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+INFO:Xst - Part-select index evaluated to out of bound value may lead to incorrect synthesis results; it is recommended not to use them in RTL
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/bram16.v" into library work
+Parsing module <bram16>.
+INFO:HDLCompiler:693 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/bram16.v" Line 17. parameter declaration becomes local in bram16 with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/bram16.v" Line 18. parameter declaration becomes local in bram16 with formal parameter declaration list
+Parsing VHDL file "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Register.vhd" into library work
+Parsing entity <reg16bits>.
+Parsing architecture <a_reg16bits> of entity <reg16bits>.
+Parsing VHDL file "/home/mendesfe/Bureau/ProjSysInfo/VHDL/ULA.vhd" into library work
+Parsing entity <ULA>.
+Parsing architecture <a_ULA> of entity <ula>.
+Parsing VHDL file "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/ROM.vhd" into library work
+Parsing entity <ROM>.
+Parsing architecture <Behavioral> of entity <rom>.
+Parsing VHDL file "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/RegisterBank.vhd" into library work
+Parsing entity <bancoreg>.
+Parsing architecture <a_bancoreg> of entity <bancoreg>.
+Parsing VHDL file "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Decoder.vhd" into library work
+Parsing entity <Decoder>.
+Parsing architecture <Behavioral> of entity <decoder>.
+Parsing VHDL file "/home/mendesfe/Bureau/ProjSysInfo/VHDL/PipeLine.vhdl" into library work
+Parsing entity <PipeLine>.
+Parsing architecture <a_PipeLine> of entity <pipeline>.
+Parsing VHDL file "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" into library work
+Parsing entity <Processor>.
+Parsing architecture <Behavioral> of entity <processor>.
+WARNING:HDLCompiler:946 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" Line 225: Actual for formal port a is neither a static name nor a globally static expression
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <Processor> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <ROM> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Decoder> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <PipeLine> (architecture <a_PipeLine>) from library <work>.
+
+Elaborating entity <bancoreg> (architecture <a_bancoreg>) from library <work>.
+
+Elaborating entity <reg16bits> (architecture <a_reg16bits>) from library <work>.
+
+Elaborating entity <ULA> (architecture <a_ULA>) from library <work>.
+Going to verilog side to elaborate module bram16
+
+Elaborating module <bram16(init_file="none",adr_width=11)>.
+Back to vhdl to continue elaboration
+WARNING:HDLCompiler:634 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" Line 121: Net <sortie_in_exMen[15]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" Line 125: Net <sortie_in_menRe[15]> does not have a driver.
+WARNING:Xst:2972 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" line 147. All outputs of instance <rom1> of block <ROM> are unconnected in block <Processor>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" line 152. All outputs of instance <dec> of block <Decoder> are unconnected in block <Processor>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" line 159. All outputs of instance <LIDI> of block <PipeLine> are unconnected in block <Processor>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" line 170. All outputs of instance <DIEX> of block <PipeLine> are unconnected in block <Processor>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" line 181. All outputs of instance <EXMen> of block <PipeLine> are unconnected in block <Processor>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" line 192. All outputs of instance <MenRE> of block <PipeLine> are unconnected in block <Processor>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" line 203. All outputs of instance <BancReg> of block <bancoreg> are unconnected in block <Processor>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" line 214. All outputs of instance <unitaritlogic> of block <ULA> are unconnected in block <Processor>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" line 221. All outputs of instance <ram> of block <bram16> are unconnected in block <Processor>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Processor>.
+    Related source file is "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd".
+INFO:Xst:3210 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" line 170: Output port <sortie_out> of the instance <DIEX> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" line 181: Output port <sortie_out> of the instance <EXMen> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" line 192: Output port <sortie_out> of the instance <MenRE> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" line 203: Output port <data_out2> of the instance <BancReg> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.vhd" line 214: Output port <flag> of the instance <unitaritlogic> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <sortie_in_exMen> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <sortie_in_menRe> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <Processor> synthesized.
+
+Synthesizing Unit <reg16bits>.
+    Related source file is "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Register.vhd".
+    Found 16-bit register for signal <reg>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <reg16bits> synthesized.
+
+Synthesizing Unit <div_16s_16s>.
+    Related source file is "".
+    Summary:
+	no macro.
+Unit <div_16s_16s> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Processor> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Processor, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Processor.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
+   Number of unique control sets:         0
+
+IO Utilization: 
+ Number of IOs:                          10
+ Number of bonded IOBs:                   0  out of    232     0%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 5.28 secs
+ 
+--> 
+
+
+Total memory usage is 394896 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   14 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
+
