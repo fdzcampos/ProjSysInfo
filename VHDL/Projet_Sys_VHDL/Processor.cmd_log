@@ -1,0 +1,57 @@
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 Processor.ngc Processor.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Processor_map.ncd Processor.ngd Processor.pcf 
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Processor_map.ncd Processor.ngd Processor.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 Processor.ngc Processor.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Processor_map.ncd Processor.ngd Processor.pcf 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 Processor.ngc Processor.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Processor_map.ncd Processor.ngd Processor.pcf 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 Processor.ngc Processor.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Processor_map.ncd Processor.ngd Processor.pcf 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 Processor.ngc Processor.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Processor_map.ncd Processor.ngd Processor.pcf 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 Processor.ngc Processor.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Processor_map.ncd Processor.ngd Processor.pcf 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 Processor.ngc Processor.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Processor_map.ncd Processor.ngd Processor.pcf 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 Processor.ngc Processor.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Processor_map.ncd Processor.ngd Processor.pcf 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 
+xst -intstyle ise -ifn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.xst" -ofn "/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/Processor.syr" 

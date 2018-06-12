@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/bancoreg.ncd
+OUTFILE=/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL/bancoreg.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=/home/mendesfe/Bureau/ProjSysInfo/VHDL/Projet_Sys_VHDL
+LICENSE=ISE
+USER_INFO=202067218_1777487267_210567960_160
